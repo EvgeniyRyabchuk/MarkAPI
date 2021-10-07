@@ -1,0 +1,53 @@
+<div class="login-container">
+
+  <form [formGroup]="form" (submit)="submit()">
+    <h1 align="center">Login in account</h1>
+    <div class="mb-3">
+      <mat-form-field appearance="fill" class="form-group">
+        <mat-label>Enter your email</mat-label>
+        <input formControlName="email" matInput placeholder="pat@example.com" [formControl]="email" required>
+        <mat-error *ngIf="email.errors?.email">Enter the correct email</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mb-3">
+      <mat-form-field appearance="fill" class="form-group">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hidePwd ? 'password' : 'text'" formControlName="password">
+        <button type="button" mat-icon-button matSuffix (click)="hidePwd = !hidePwd" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePwd">
+          <mat-icon>{{hidePwd ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="password.errors?.required">Enter password</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mb-3 form-check" class="form-group">
+      <p><mat-checkbox formControlName="rememberMe">Check me out</mat-checkbox></p>
+    </div>
+    <div class="mb-3 form-check" class="form-group">
+      <button mat-raised-button id="submit-btn" color="primary" type="submit" class="btn btn-primary">Login</button>
+    </div>
+
+  </form>
+</div>
+<p>Form value: {{ form.value | json }}</p>
+<p>Form status: {{ form.status | json }}</p>
+
+
+<!--<form [formGroup]="form" (submit)="submit()">-->
+
+<!--  <div class="mb-3">-->
+<!--    <label for="exampleInputEmail1" class="form-label">Email address</label>-->
+<!--    <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">-->
+<!--    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+<!--  </div>-->
+<!--  <div class="mb-3">-->
+<!--    <label for="exampleInputPassword1" class="form-label">Password</label>-->
+<!--    <input type="password" required="required" minlength="9" formControlName="password" class="form-control" id="exampleInputPassword1">-->
+<!--  </div>-->
+<!--  <div class="mb-3 form-check">-->
+<!--    <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+<!--    <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
+<!--  </div>-->
+<!--  <button type="submit" class="btn btn-primary">Login</button>-->
+<!--</form>-->
+
+
