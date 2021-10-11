@@ -9,7 +9,23 @@
   <style type="text/css">@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v109/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
 <style>.mat-typography{font:400 14px/20px Roboto,Helvetica Neue,sans-serif;letter-spacing:normal;}body,html{height:100%;}body{margin:0;font-family:Roboto,Helvetica Neue,sans-serif;}</style><link rel="stylesheet" href="styles.acdbe6a50d40db8ce86d.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.acdbe6a50d40db8ce86d.css"></noscript></head>
 <body class="mat-typography">
+  <script>
+    (function () {
+      // Retrieve the URL the user was trying to access when receiving the 404.
+      var redirect = sessionStorage.redirect;
+      // Remove the URL from sessionStorage.
+      delete sessionStorage.redirect;
+      // Check if we actually need to redirect.
+      if (redirect && redirect != location.href) {
+        // We need to redirect to the URL the user was trying to access.
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+  
   <app-root></app-root>
 <script src="runtime.d294f6e6db1a275b23d5.js" defer></script><script src="polyfills.e0899be74a32f7680ab0.js" defer></script><script src="main.a397ea12480937dce8dc.js" defer></script>
 
-</body></html>
+
+</body
+></html>
