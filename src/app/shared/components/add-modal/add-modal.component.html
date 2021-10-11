@@ -1,0 +1,24 @@
+<div class="modal-wrapper">
+  <form action="" [formGroup]="addStorageForm" style="display: inline-flex;flex-direction: column">
+    <mat-form-field>
+      <input formControlName="name" required type="text" matInput placeholder="Name: ">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="count" required type="number" matInput placeholder="Count: ">
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="provider" required type="text" matInput placeholder="Provider: ">
+    </mat-form-field>
+  </form>
+  <button mat-raised-button
+          *ngIf="data.method === 'add'"
+          (click)="storageModalAction('add')"
+          [disabled]="addStorageForm.invalid">
+    ADD STORAGE ITEM
+  </button>
+  <button mat-raised-button *ngIf="data.method === 'edit'"
+          (click)="storageModalAction('edit')"
+          [disabled]="addStorageForm.invalid">
+    EDIT STORAGE ITEM
+  </button>
+</div>

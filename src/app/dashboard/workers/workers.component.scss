@@ -1,0 +1,23 @@
+.storage-page-wrapper {
+  padding: 40px;
+  position: relative;
+
+  .storage-table-container {
+    height: 400px;
+    overflow: auto;
+
+    table {
+      width: 100%;
+
+      th, td {
+        text-align: center;
+      }
+    }
+  }
+
+  .add-button {
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+  }
+}
