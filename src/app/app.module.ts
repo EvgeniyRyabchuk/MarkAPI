@@ -10,7 +10,6 @@ import {NotifierModule} from "angular-notifier";
 import {MatDialogModule} from "@angular/material/dialog";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthInterceptor} from "./shared/interceptors/auth.interceptor";
-import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -31,10 +30,6 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    },
-    {
-      provide: LocationStrategy,
-      useClass: HashLocationStrategy
     }
   ],
   bootstrap: [AppComponent]
